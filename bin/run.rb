@@ -1,5 +1,4 @@
 require_relative '../config/environment'
 
-
-
-puts "HELLO WORLD"
+program = CommandLineInterface.new
+program.run
