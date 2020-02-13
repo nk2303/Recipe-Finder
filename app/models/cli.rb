@@ -71,7 +71,7 @@ class CommandLineInterface
         user_name = @prompt.ask('Please enter your name ?')
         if user = User.find_by(name: user_name)
             puts 'Here are your exiting recipes:'
-            @prompt.say(recipes_names(user.recipes))
+            @prompt.say(recipes_names(user.recipes), color: :red)
             if recipes_names(user.recipes).length > 0
                 prompt_options(user, user.recipes)
             else
