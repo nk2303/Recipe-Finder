@@ -1,7 +1,6 @@
 require "tty-prompt"
 require 'pry'
 
-
 class CommandLineInterface
     @prompt = TTY::Prompt.new
     def run
@@ -61,7 +60,6 @@ class CommandLineInterface
                     new_user.recipes << r_obj
                 end
             end
-            #puts 'Recipes saved'
             @prompt.say('Recipes saved', color: :red)
         end
         run
@@ -75,12 +73,10 @@ class CommandLineInterface
             if recipes_names(user.recipes).length > 0
                 prompt_options(user, user.recipes)
             else
-                # puts "Your list is empty"
                 @prompt.say('Your list is empty.', color: :red)
                 run
             end
         else
-            # puts 'Cannot find a username. Please choose what else you want to do.'
             @prompt.say('Cannot find a username. Please choose what else you want to do.', color: :red)
             run
         end
@@ -106,11 +102,9 @@ class CommandLineInterface
             recipes_to_delete.each do |r_obj|
                 user.recipes.delete(r_obj)
             end
-            # puts "Recipes deleted!"
             @prompt.say('Recipes deleted!', color: :red)
             run
         elsif selected_option == 3
-            # puts "Goodbye!"
             @prompt.say('Goodbye!', color: :red)
         end
     end
@@ -123,11 +117,9 @@ class CommandLineInterface
         if update_choice == 1
             new_recipe_name = @prompt.ask('Enter a new name')
             recipe.update(name: new_recipe_name)
-            # puts "Name has changed successfully."
             @prompt.say("Name has changed successfully.", color: :red)
             run
         else
-            # puts "Goodbye!"
             @prompt.say("Goodbye!", color: :red)
         end
     end
