@@ -1,59 +1,56 @@
-# Module One Final Project Guidelines
+# RECIPE FINDER - Command Line CRUD App
 
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
+This repository contains a simple command-line-interface program that allows the user to find recipes with a list of available ingredients. User can also find the ingredients from a specific recipe. As the user wants to save his/her recipes, the program will create a data for that user, so that they can access to their saved recipes later. The program utilizes Ruby and SQLite3 (through ActiveRecord) to create a database with various associations, provides the methods to access the database, and creates an user experience through CLI.
 
-For your final project, we'll be building a Command Line database application.
+# INSTALLATION
 
-## Project Requirements
+Fork and clone the repository. You will need to have Ruby installed on your device.
 
-### Option One - Data Analytics Project
+Open the directory in your terminal
+enter: bundle install to install the necessary gems
+enter: rake db:migrate to create the database
+enter: rake db:seed to add data to the databas (optional)
 
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have at minimum three models including one join model. This means you must have a many-to-many relationship.
-3. You should seed your database using data that you collect either from a CSV, a website by scraping, or an API.
-4. Your models should have methods that answer interesting questions about the data. For example, if you've collected info about movie reviews, what is the most popular movie? What movie has the most reviews?
-5. You should provide a CLI to display the return values of your interesting methods.  
-6. Use good OO design patterns. You should have separate classes for your models and CLI interface.
+If you want to add more recipes:
+Add them under seed file.
+Run command rake db:seed in your terminal.
 
-  **Resource:** [Easy Access APIs](https://github.com/learn-co-curriculum/easy-access-apis)
+# START THE PROGRAM
 
-### Option Two - Command Line CRUD App
+Enter into your terminal: ruby bin/run.rb
 
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have a minimum of three models.
-3. You should build out a CLI to give your user full CRUD ability for at least one of your resources. For example, build out a command line To-Do list. A user should be able to create a new to-do, see all todos, update a todo item, and delete a todo. Todos can be grouped into categories, so that a to-do has many categories and categories have many to-dos.
-4. Use good OO design patterns. You should have separate models for your runner and CLI interface.
+Choose any options out of four using up/down button.
 
-### Brainstorming and Proposing a Project Idea
+## Option 1 : Get my ingredients from a recipe
 
-Projects need to be approved prior to launching into them, so take some time to brainstorm project options that will fulfill the requirements above.  You must have a minimum of four [user stories](https://en.wikipedia.org/wiki/User_story) to help explain how a user will interact with your app.  A user story should follow the general structure of `"As a <role>, I want <goal/desire> so that <benefit>"`. In example, if we were creating an app to randomly choose nearby restaurants on Yelp, we might write:
+ Pick a recipe to see ingredients.
+ Ingredients of that recipe will appear on screen.
+ The program will automatically go back to the beginning menu option.
 
-* As a user, I want to be able to enter my name to retrieve my records
-* As a user, I want to enter a location and be given a random nearby restaurant suggestion
-* As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
-* As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
+# Option 2 : Get my recipes from ingredients
+ Pick ALL ingredients that you have.
+ The program will return a list of recipes that the user can cook with.
+ And ask you which recipe you want to save into your account. Choose Y or N.
+ N will take you back to the beginning menu option.
+ Y will ask you to choose the recipe you want to save into your account.
+ Enter your username for you account.
+ If you haven't had an account, the program will CREATE a new account for you, and save the chosen recipes.
 
-## Instructions
+## Option 3 : Check my saved recipes
+ Ask for 3 options:
+### Option 1 : Update Recipe
+ The program will ask you to choose which recipe you want to change from your save list.
+ Enter the new name for your recipe.
+ The program will appear the orginal menu which you can go to your saved recipes and see if it's updated.
+### Option 2 : Delete Recipe
+ The program will ask you to choose which recipe you want to delete from your save list.
+ Pick your recipe or exit.
+### Option 3 : Exit
+ Exit out of the program.
 
-1. Fork and clone this repository.
-2. Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable.
-3. Make sure to create a good README.md with a short description, install instructions, a contributors guide and a link to the license for your code.
-4. Make sure your project checks off each of the above requirements.
-5. Prepare a video demo (narration helps!) describing how a user would interact with your working project.
-    * The video should:
-      - Have an overview of your project.(2 minutes max)
-6. Prepare a presentation to follow your video.(3 minutes max)
-    * Your presentation should:
-      - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-      - Discuss 3 things you learned in the process of working on this project.
-      - Address, if anything, what you would change or add to what you have today?
-      - Present any code you would like to highlight.   
-7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
+## Option 4 : Exit
+-- Exit out of the program.
 
----
-### Common Questions:
-- How do I turn off my SQL logger?
-```ruby
-# in config/environment.rb add this line:
-ActiveRecord::Base.logger = nil
-```
+
+
+![describe photo here](url)
