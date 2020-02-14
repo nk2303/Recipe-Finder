@@ -23,30 +23,30 @@ Choose any options out of four using up/down button.
 
 ## Option 1 : Get my ingredients from a recipe
 
-#### Pick a recipe to see ingredients.
-#### Ingredients of that recipe will appear on screen.
-#### The program will automatically go back to the beginning menu option.
+ Pick a recipe to see ingredients.
+ Ingredients of that recipe will appear on screen.
+ The program will automatically go back to the beginning menu option.
 
 # Option 2 : Get my recipes from ingredients
-#### pick ALL ingredients that you have.
-#### The program will return a list of recipes that the user can cook with.
-#### And ask you which recipe you want to save into your account. Choose Y or N.
-#### N will take you back to the beginning menu option.
-#### Y will ask you to choose the recipe you want to save into your account.
-#### Enter your username for you account.
-#### If you haven't had an account, the program will CREATE a new account for you, and save the chosen recipes.
+ Pick ALL ingredients that you have.
+ The program will return a list of recipes that the user can cook with.
+ And ask you which recipe you want to save into your account. Choose Y or N.
+ N will take you back to the beginning menu option.
+ Y will ask you to choose the recipe you want to save into your account.
+ Enter your username for you account.
+ If you haven't had an account, the program will CREATE a new account for you, and save the chosen recipes.
 
 ## Option 3 : Check my saved recipes
-#### Ask for 3 options:
+ Ask for 3 options:
 ### Option 1 : Update Recipe
-#### The program will ask you to choose which recipe you want to change from your save list.
-#### Enter the new name for your recipe.
-#### The program will appear the orginal menu which you can go to your saved recipes and see if it's updated.
+ The program will ask you to choose which recipe you want to change from your save list.
+ Enter the new name for your recipe.
+ The program will appear the orginal menu which you can go to your saved recipes and see if it's updated.
 ### Option 2 : Delete Recipe
-#### The program will ask you to choose which recipe you want to delete from your save list.
-#### Pick your recipe or exit.
+ The program will ask you to choose which recipe you want to delete from your save list.
+ Pick your recipe or exit.
 ### Option 3 : Exit
-#### Exit out of the program.
+ Exit out of the program.
 
 ## Option 4 : Exit
 -- Exit out of the program.
