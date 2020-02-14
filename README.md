@@ -6,10 +6,13 @@ This repository contains a simple command-line-interface program that allows the
 
 Fork and clone the repository. You will need to have Ruby installed on your device.
 
-Open the directory in your terminal
-enter: bundle install to install the necessary gems
-enter: rake db:migrate to create the database
-enter: rake db:seed to add data to the databas (optional)
+Open the directory in your terminal.
+
+Enter: bundle install to install the necessary gems.
+
+Enter: rake db:migrate to create the database.
+
+Enter: rake db:seed to add data to the databas (optional).
 
 If you want to add more recipes:
 Add them under seed file.
@@ -21,13 +24,13 @@ Enter into your terminal: ruby bin/run.rb
 
 Choose any options out of four using up/down button.
 
-## Option 1 : Get my ingredients from a recipe
+### Option 1 : Get my ingredients from a recipe
 
  Pick a recipe to see ingredients.
  Ingredients of that recipe will appear on screen.
  The program will automatically go back to the beginning menu option.
 
-# Option 2 : Get my recipes from ingredients
+### Option 2 : Get my recipes from ingredients
  Pick ALL ingredients that you have.
  The program will return a list of recipes that the user can cook with.
  And ask you which recipe you want to save into your account. Choose Y or N.
@@ -36,7 +39,7 @@ Choose any options out of four using up/down button.
  Enter your username for you account.
  If you haven't had an account, the program will CREATE a new account for you, and save the chosen recipes.
 
-## Option 3 : Check my saved recipes
+### Option 3 : Check my saved recipes
  Ask for 3 options:
 ### Option 1 : Update Recipe
  The program will ask you to choose which recipe you want to change from your save list.
@@ -48,8 +51,8 @@ Choose any options out of four using up/down button.
 ### Option 3 : Exit
  Exit out of the program.
 
-## Option 4 : Exit
--- Exit out of the program.
+### Option 4 : Exit
+Exit out of the program.
 
 
 
