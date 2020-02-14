@@ -40,15 +40,14 @@ Choose any options out of four using up/down button.
  If you haven't had an account, the program will CREATE a new account for you, and save the chosen recipes.
 
 ### Option 3 : Check my saved recipes
- Ask for 3 options:
-### Option 1 : Update Recipe
+Option 1 : Update Recipe
  The program will ask you to choose which recipe you want to change from your save list.
  Enter the new name for your recipe.
  The program will appear the orginal menu which you can go to your saved recipes and see if it's updated.
-### Option 2 : Delete Recipe
+Option 2 : Delete Recipe
  The program will ask you to choose which recipe you want to delete from your save list.
  Pick your recipe or exit.
-### Option 3 : Exit
+Option 3 : Exit
  Exit out of the program.
 
 ### Option 4 : Exit
