@@ -34,15 +34,30 @@ Update a recipe’s name will update the original database. Enjoy!
         elsif welcome == 3
             saved_recipes
         elsif welcome == 4
+            seperate_line
             @prompt.say('Goodbye!', color: :yellow)
         end
     end
     
+    def print_array(array)
+        i = 0
+        array1 = []
+        while i < array.length do
+          array1 << array[i]
+          i = i + 1
+          if (i % 6 == 0)
+            @prompt.say(array1.join(", "), color: :yellow)
+            array1 = []
+          end
+        end
+        @prompt.say(array1.join(", "), color: :yellow)
+      end
+
     def choose_recipes
         recipe_str = Recipe.all.map{|recipe| recipe.name}
         seperate_line
         @prompt.say("Here are the available recipes:", color: :yellow)
-        @prompt.say(recipe_str.join(", "), color: :yellow)
+        print_array(recipe_str)
         puts " "
         pick_recipe = @prompt.select("Scroll down for more options. Please pick a recipe to see ingredients from below:", recipe_str) 
         r_obj = Recipe.find_by name: pick_recipe
@@ -57,9 +72,9 @@ Update a recipe’s name will update the original database. Enjoy!
         seperate_line
         ingredient_str = Ingredient.all.map{|ingre| ingre.name }
         @prompt.say("Here are the available ingredients you can put in the list:", color: :yellow)
-        @prompt.say(ingredient_str.join(", "), color: :yellow)
+        @prompt.say(print_array(ingredient_str), color: :yellow)
         puts " "
-        pick_ingredient = @prompt.multi_select("Scroll down for more options. Use 'SPACEBAR' to pick ALL ingredients that you have:", ingredient_str) #return [str,str]
+        pick_ingredient = @prompt.multi_select("Scroll down for more options. Use 'SPACEBAR' to pick ALL ingredients that you have:", ingredient_str)
         recipes = Ingredient.get_recipes(pick_ingredient)
         recipe_names = recipes.map{|recipe| recipe.name }
         seperate_line
@@ -81,7 +96,7 @@ Update a recipe’s name will update the original database. Enjoy!
         seperate_line
         recipe_names = recipe.map{|r_obj|r_obj.name}
         if want_to_save 
-            selected_recipes = @prompt.multi_select("Using spacebar to multi-select ALL the recipe that you want to save ", recipe_names)
+            selected_recipes = @prompt.multi_select("Using spacebar to multi-select ALL the recipes that you want to save ", recipe_names)
             user_name = @prompt.ask('Please enter your name ?')
             new_user = User.find_or_create_by(name: user_name)
             selected_recipes.each do |selected_recipe|
@@ -122,7 +137,7 @@ Update a recipe’s name will update the original database. Enjoy!
         selected_option = @prompt.select("Please pick an option") do |option|
             option.choice "Update Recipe", 1
             option.choice "Delete Recipe", 2
-            option.choice "Exit", 3
+            option.choice "Back to main menu", 3
         end
         if selected_option == 1
             recipe_name_to_update = @prompt.select('Pick recipes you want to update ?', recipes_names(recipes))
@@ -144,12 +159,12 @@ Update a recipe’s name will update the original database. Enjoy!
                 run
             else
                 seperate_line
-                @prompt.say('Nothing deleted!', color: :yellow)
+                @prompt.say('Nothing deleted! Make sure to select the recipes you want by using spacebar.', color: :red)
                 puts " "
                 run
             end
         elsif selected_option == 3
-            @prompt.say('Goodbye!', color: :yellow)
+            run
         end
     end
 
@@ -157,7 +172,7 @@ Update a recipe’s name will update the original database. Enjoy!
         seperate_line
         update_choice = @prompt.select("What would you like to do?") do |option|
             option.choice "Change recipe name", 1
-            option.choice "Exit", 2
+            option.choice "Back to main menu", 2
         end
         if update_choice == 1
             new_recipe_name = @prompt.ask('Enter a new name')
@@ -166,7 +181,7 @@ Update a recipe’s name will update the original database. Enjoy!
             @prompt.say("Name has changed successfully.", color: :yellow)
             run
         else
-            @prompt.say("Goodbye!", color: :red)
+            run
         end
     end
 
