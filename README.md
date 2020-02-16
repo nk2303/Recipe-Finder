@@ -8,19 +8,19 @@ Fork and clone the repository. You will need to have Ruby installed on your devi
 
 Open the directory in your terminal.
 
-Enter: bundle install to install the necessary gems.
+Enter: `bundle install` to install the necessary gems.
 
-Enter: rake db:migrate to create the database.
+Enter: `rake db:migrate` to create the database.
 
-Enter: rake db:seed to add data to the databas (optional).
+Enter: `rake db:seed` to add data to the databas (optional).
 
 If you want to add more recipes:
-Add them under seed file.
-Run command rake db:seed in your terminal.
+Add them under `@reci_ingre` hash in the seed file.
+Run command `rake db:seed` in your terminal.
 
 # START THE PROGRAM
 
-Enter into your terminal: ruby bin/run.rb
+Enter into your terminal: `ruby bin/run.rb`
 
 Choose any options out of four using up/down button.
 
@@ -31,23 +31,23 @@ Choose any options out of four using up/down button.
  The program will automatically go back to the beginning menu option.
 
 ### Option 2 : Get my recipes from ingredients
- Pick ALL ingredients that you have.
+ Pick ALL ingredients that you have using `spacebar` .
  The program will return a list of recipes that the user can cook with.
- And ask you which recipe you want to save into your account. Choose Y or N.
- N will take you back to the beginning menu option.
- Y will ask you to choose the recipe you want to save into your account.
+ And ask you which recipe you want to save into your account. Choose `Y` or `N`.
+ `N` will take you back to the beginning menu option.
+ `Y` will ask you to choose the recipe you want to save into your account.
  Enter your username for you account.
- If you haven't had an account, the program will CREATE a new account for you, and save the chosen recipes.
+ If you haven't had an account, the program will CREATE a new account for you, and then it will save the chosen recipes.
 
 ### Option 3 : Check my saved recipes
-Option 1 : Update Recipe
+Option 1 : `Update Recipe`
  The program will ask you to choose which recipe you want to change from your save list.
  Enter the new name for your recipe.
  The program will appear the orginal menu which you can go to your saved recipes and see if it's updated.
-Option 2 : Delete Recipe
+Option 2 : `Delete Recipe`
  The program will ask you to choose which recipe you want to delete from your save list.
  Pick your recipe or exit.
-Option 3 : Exit
+Option 3 : `Back to the main menu`
  Exit out of the program.
 
 ### Option 4 : Exit
